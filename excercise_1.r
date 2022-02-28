@@ -74,17 +74,41 @@ A <- A[order(A[,1]), ]
 
 
 # Task 2
-# ...
+# a)
+cheapest = homedata[which.min(homedata$y2000), ]
+most_expensive = homedata[which.max(homedata$y2000), ]
+
+# b)
+five_most_expensive = homedata[order(homedata$y2000, decreasing = TRUE)[1:5], ]
+
+# c)
+length(homedata$y2000[homedata$y2000 > 750000])
+
+# d)
+mean(homedata$y1970[homedata$y2000 > 750000])
+
+# e)
+homedata[homedata$y1970 > homedata$y2000, ]
+
+# f)
+index <- order(
+  (homedata$y2000 - homedata$y1970) / homedata$y1970, decreasing = TRUE
+)
+
+homedata[index[1:10], ]
 
 
 # Task 3
-# ...
+load(survey)
 
+# a)
+sum(survey$Sex == "Male", na.rm = TRUE)
 
+# b)
+sum(survey$Sex == "Male" & survey$Smoke != "Never", na.rm = TRUE)
 
+# c)
+mean(survey$Height[survey$Sex == "Male"], na.rm = TRUE)
 
-
-
-
-
-
+# d)
+survey[order(survey$Age)[1:6], c("Height", "Sex")]
