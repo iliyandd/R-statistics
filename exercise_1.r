@@ -113,3 +113,4 @@ mean(survey$Height[survey$Sex == "Male"], na.rm = TRUE)
 # d)
 survey[order(survey$Age)[1:6], c("Height", "Sex")]
 
+
