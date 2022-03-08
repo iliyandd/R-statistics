@@ -73,9 +73,16 @@ cor(homedata$y1970, homedata$y2000)
 
 
 # Task 5
-# to solve...
+# средно, ст. отклонение, дисперсия, корелация, квартили
+mean(anscombe$x1)
+sd(anscombe$x1)
+summary(anscombe$x1)
 
+# стойността, за която 88.5% от наблюденията са под нея
+quantile(anscombe$x1, 0.885)
 
+# корелация между х1 и у1
+cor(anscombe$x1, anscombe$y1)
 
 
 
