@@ -5,7 +5,7 @@ plot(survey$Height)
 hist(survey$Height) # хистограма
 
 # възможността дадена стойност да попадне в определен интервал
-hist(survey$Heigh, probability = TRUE, breaks = 200)
+hist(survey$Height, probability = TRUE, breaks = 30)
 
 x = rnorm(10000) 
 hist(x, probability = TRUE, breaks = 200) # breaks е броят на интервалите
