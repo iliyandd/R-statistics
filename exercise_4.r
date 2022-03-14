@@ -14,7 +14,7 @@ for(x in 1:10){
 
 
 # Sample functions...
-# Теглене с въщане. При replace=True е теглене с връщане
+# Теглене с връщане. При replace=True е теглене с връщане
 x = sample(c("B", "W"), size=10, replace=TRUE, prob=c(0.2, 0.8))
 mean(x=="B")
 
@@ -76,7 +76,7 @@ f = function(p){
 }
 
 
-# Task
+# Task(from past exam)
 # сума от i до n на x^i
 f = function(x, n){
   sum(x^(1:n))
@@ -88,24 +88,42 @@ f(2, 10)
 
 # Task 3
 f = function(p1=0.3, p2=0.4){
-  result_1 = p2*p1 + (1-p1)*p1*p2 # a)
-  result_2 = p1*p2 + (1-p2)*p1*p2 # b)
-  
-  result_1
+  # result_1 = p2*p1 + (1-p1)*p1*p2 # a)
+  # result_2 = p1*p2 + (1-p2)*p1*p2 # b)
+  # result_1
+  # result_2
 }
 
 f()
 # p2.p1 + (1-p2).p1.p2 да победи, ако играе първо с майката
 
 
+# Task 4
+f = function(n=20){
+  x = sample(1:20, n, replace=FALSE)
+  counter = 0
+  for(i in 1:20){
+    if(x[i] == i){
+      counter = counter + 1
+    }
+  }
+  
+  counter / 20
+}
+
+f()
 
 
+# Task 5
+f = function(){
+  while(TRUE){
+    counter = 1
+    x = sample(c("E", "T"), 5, replace = TRUE)
+    if(x == c("E", "E", "T", "E", "T")){
+      counter
+    }
+    counter = counter + 1
+  }
+}
 
-
-
-
-
-
-
-
-
+f()
