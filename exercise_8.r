@@ -9,6 +9,7 @@ hist(y, probability = T)
 lines(density(y))
 
 
+
 # Task 1
 f = function(n){
   x = rnorm(n, 2, 2)
