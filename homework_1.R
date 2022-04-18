@@ -7,7 +7,7 @@ library("UsingR")
 
 # Задача 2
 # 2.1
-mtcars[1:5, 1]
+mtcars[1:5, ]
 
 # 2.2
 rownames(mtcars)[which.max(mtcars$hp)]
