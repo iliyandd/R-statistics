@@ -47,3 +47,6 @@ y = ewr$NW
 
 
 t.test(x, y, paired = F, var.equal = T)
+
+
+# Task 6
