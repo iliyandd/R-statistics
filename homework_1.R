@@ -11,7 +11,7 @@ mtcars[1:5, ]
 
 # 2.2
 rownames(mtcars)[which.max(mtcars$hp)]
-rownames(mtcars[order(mtcars$hp, decreasing = T), ])[1:5]
+rownames(mtcars[order(mtcars$wt), ])[1:5]
 
 # 2.3
 # тук не съм сигурен дали това се иска
@@ -25,7 +25,7 @@ cor(mtcars$hp, mtcars$mpg)
 quantile(mtcars$hp, 0.80)
 
 # 2.6
-length(mtcars$hp[mtcars$hp < 100]) / length(mtcars$hp) * 100
+sum(mtcars$hp < 100) / length(mtcars$hp) * 100
 
 # 2.7
 t = table(mtcars$cyl, mtcars$gear)
