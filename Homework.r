@@ -37,7 +37,7 @@ boxplot(mtcars$mpg,mtcars$cyl)
 boxplot(mtcars$mpg ~ mtcars$cyl)
 
 #2.4
-plot(mtcars$hp, mtcars$mpg)
+plot(mtcars$hp, mtcars$mpg,type = "l")
 cor(mtcars$hp,mtcars$mpg)
 
 #2.5
@@ -61,3 +61,26 @@ getPercentOfLowerThanSomeHp(100)
 #2.7
 #P(mtcars$cyl = 8 | mtcars$gear = 5)
 prop.table(table(mtcars$cyl,mtcars$gear),2)[3,3]
+
+
+
+
+#ex1
+#1.1
+shots = c(
+  8, 5, 12, 11, 12, 8, 6, 7, 11, 7, 11, 13, 15,
+  12, 17, 12, 9, 15, 8, 11, 11, 13, 10, 8, 12, 12, 11,
+  13, 12, 14, 9, 11, 13, 10, 10, 12, 13, 10, 15, 12, 15, 12
+)
+f = function(p,element){
+ x= dbinom(x=element,30,p)
+ x
+ result = log(x)
+ result
+}
+for (i in 1:length(shots)) {
+  prob = f(0.5,shots[i])
+  print(prob)
+}
+
+
