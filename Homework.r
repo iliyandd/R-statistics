@@ -66,21 +66,25 @@ prop.table(table(mtcars$cyl,mtcars$gear),2)[3,3]
 
 
 #ex1
-#1.1
 shots = c(
   8, 5, 12, 11, 12, 8, 6, 7, 11, 7, 11, 13, 15,
   12, 17, 12, 9, 15, 8, 11, 11, 13, 10, 8, 12, 12, 11,
   13, 12, 14, 9, 11, 13, 10, 10, 12, 13, 10, 15, 12, 15, 12
 )
+#1.1
 f = function(p,element){
  x= dbinom(x=element,30,p)
- x
  result = log(x)
  result
 }
+#example p
+p = 0.7
+#1.2
+#runif --> for random probs between 0 and 1
+probVector = runif(n=length(shots))
+probVector
 for (i in 1:length(shots)) {
-  prob = f(0.5,shots[i])
+  prob = f(probVector[i],shots[i])
   print(prob)
 }
-
 
