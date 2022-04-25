@@ -8,20 +8,20 @@ cars = mtcars[1:5, ]
 #maxHp
 maxHpCarF = function(){
   
-maxHpCar = mtcars$hp[which.max(mtcars$hp)]
-MaxHpCarName = rownames(mtcars)[which.max(mtcars$hp)]
-result = paste(MaxHpCarName," : ")
-result = paste(result,maxHpCar)
-result = paste(result,"hp")
-result
+  maxHpCar = mtcars$hp[which.max(mtcars$hp)]
+  MaxHpCarName = rownames(mtcars)[which.max(mtcars$hp)]
+  result = paste(MaxHpCarName," : ")
+  result = paste(result,maxHpCar)
+  result = paste(result,"hp")
+  result
 }
 maxHpCarF()
 #Top 5 lighter cars
 topFiveLighter = function(){
-o = order(mtcars$wt, decreasing = F)
-lightCars = mtcars$wt[o][1:5]
-lightCarsName = rownames(mtcars[o, ])[1:5]
-for (i in 1:5) {
+  o = order(mtcars$wt, decreasing = F)
+  lightCars = mtcars$wt[o][1:5]
+  lightCarsName = rownames(mtcars[o, ])[1:5]
+  for (i in 1:5) {
     r = paste(lightCarsName[i], " --> ")
     r = paste(r, lightCars[i])
     print(r)
@@ -50,11 +50,11 @@ getTop20PercentHp(20)
 
 #2.6
 getPercentOfLowerThanSomeHp  = function(s){
-lowerThanS = length(mtcars$hp[mtcars$hp<=s])
-allCars = length(mtcars$hp)
-result = lowerThanS/allCars *100
-result  = paste(result,"%")
-result
+  lowerThanS = length(mtcars$hp[mtcars$hp<=s])
+  allCars = length(mtcars$hp)
+  result = lowerThanS/allCars *100
+  result  = paste(result,"%")
+  result
 }
 getPercentOfLowerThanSomeHp(100)
 
@@ -73,9 +73,9 @@ shots = c(
 )
 #1.1
 f = function(p,element){
- x= dbinom(x=element,30,p)
- result = log(x)
- result
+  x= dbinom(x=element,30,p)
+  result = log(x)
+  result
 }
 #example p
 p = 0.7
@@ -83,8 +83,40 @@ p = 0.7
 #runif --> for random probs between 0 and 1
 probVector = runif(n=length(shots))
 probVector
+results = c()
 for (i in 1:length(shots)) {
   prob = f(probVector[i],shots[i])
-  print(prob)
+  results  = append(results,prob)
+  print(results[i])
+}
+#ex1.3
+plot(x = probVector, y = results, type="p")
+
+#ex4
+getTheBestProb = function(probVector, probs){
+  resultP = probVector[which.max(probs)]
+  resultP
 }
 
+getTheBestProb(probVector,results)
+
+
+
+#ex3 
+
+countBubbleGums = function(){
+  minSizeOfGums = 20
+  isOk = FALSE
+  while(!isOk){
+    count = sample(1:20,size = minSizeOfGums,replace = T)
+    filteredGums = unique(count)
+    if(length(filteredGums)==20){
+      isOk = TRUE
+    }
+    else{
+      minSizeOfGums = minSizeOfGums + 1
+    }
+  }
+  minSizeOfGums
+}
+print(countBubbleGums())
