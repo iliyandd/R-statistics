@@ -92,7 +92,7 @@ for (i in 1:length(shots)) {
 #ex1.3
 plot(x = probVector, y = results, type="p")
 
-#ex4
+#ex1.4
 getTheBestProb = function(probVector, probs){
   resultP = probVector[which.max(probs)]
   resultP
