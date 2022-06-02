@@ -2,15 +2,11 @@
 
 
 # Task 2
-generate_uniform_distribution = function(n) {
-  runif(n, 5, 12)
-}
-
 repeat_normality_check = function(n) {
   hypothesis_results = c()
   
   for (i in 1:10000) {
-    x = generate_uniform_distribution(n)
+    x = runif(n, 5, 12)
     hypothesis_results = append(hypothesis_results, shapiro.test(x)$p.value > 0.05)
   }
   
