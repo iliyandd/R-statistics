@@ -48,6 +48,6 @@ p-value = chisq.test(m)
 
 
 # Task 5
-m <- matrix(c(44, 74, 79, 72, 31, 14, 25, 27, 24, 10, 15, 20, 20, 23, 9, 3, 5, 5, 0, 0),
+m = matrix(c(44, 74, 79, 72, 31, 14, 25, 27, 24, 10, 15, 20, 20, 23, 9, 3, 5, 5, 0, 0),
             nrow=4, ncol=5, byrow = T)
 pvalue = chisq.test(m)
