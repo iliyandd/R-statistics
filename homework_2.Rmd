@@ -1,3 +1,15 @@
+---
+title: "Homework 2"
+author: "Илиян Димитров 82111"
+date: '2022-06-08'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
 # Task 1
 deny_zero_hypothesis = function(n){
   t = table(sample(1:6,size = n,replace = T))
@@ -15,9 +27,10 @@ f = function(n){
 f(100)
 f(200)
 f(400)
+```
 
-
-# Task 2
+```{r}
+  # Task 2
 repeat_normality_check = function(n) {
   hypothesis_results = c()
   
@@ -33,3 +46,4 @@ repeat_normality_check(15)
 repeat_normality_check(25)
 repeat_normality_check(50)
 repeat_normality_check(90)
+```

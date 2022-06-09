@@ -23,7 +23,7 @@ x = c(15, 10, 13, 7, 9, 8, 21, 9, 14, 8)
 y = c(15, 14, 12, 8, 14, 10, 7, 16, 10, 15, 12)
 
 shapiro.test(x) # p-value > 0.05 значи и Н.Р
-shapiro.test(y) # p-value < 0.05 значи и не е Н.Р
+shapiro.test(y) # p-value > 0.05 значи е Н.Р
 
 t.test(x, y, paired = F, var.equal = T, alternative = "less")
 
